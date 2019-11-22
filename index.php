@@ -2,21 +2,21 @@
 
 	$directory = __DIR__ . "\\test"; 
 
+	// Derna variable smitha ($directory) khchina fiha l9ima dyal (__DIR__) .. achno hiya had __Dir__ 3wtani :(
 
-// Derna variable smitha ($directory) khchina fiha l9ima dyal (__DIR__) .. achno hiya had __Dir__ 3wtani :(
+		// __DIR__ : hia wa7ed lconstante saybatha lina l7ajja PHP daret fiha lien li fih lmilaf li 7na fat7in (index.php)
+		// 			Ya3ni f l7ala dyalena howa : (C:\xampp\htdocs\_FILES_1) , we3lach daret PHP hadchi kamel hhhh, daba tchof 				3lach men be3d.
 
-	// __DIR__ : hia wa7ed lconstante saybatha lina l7ajja PHP daret fiha lien li fih lmilaf li 7na fat7in (index.php)
-	// 			Ya3ni f l7ala dyalena howa : (C:\xampp\htdocs\_FILES_1) , we3lach daret PHP hadchi kamel hhhh, daba tchof 				3lach men be3d.
+		// Mzyaaan : ohadik (\\test) dyalach ??
+			//test : howa lmilaf jdid li bghina ndiro fih tajarib laysmeh lina. => 
 
-	// Mzyaaan : ohadik (\\test) dyalach ??
-		//test : howa lmilaf jdid li bghina ndiro fih tajarib laysmeh lina. => 
-
-	// ILA MAFHEMTICH MZN : kemel rah atfhem menli tkemel l9raya
+		// ILA MAFHEMTICH MZN : kemel rah atfhem menli tkemel l9raya
 
 
 	if (file_exists( $directory)) 
-	{	 	// gelna l PHP wach kain chi milaf smito $directory flblasa  
-			// li 7na fiha : (C:\xampp\htdocs\_FILES_1) : ila kan affichih
+	{	 	
+		// gelna l PHP wach kain chi milaf smito $directory flblasa  
+		// li 7na fiha : (C:\xampp\htdocs\_FILES_1) : ila kan affichih
 		echo "$directory : EXISTs<br>";
 
 	}else
@@ -26,14 +26,21 @@
 			echo "$directory : Created succesfuly.<br>";
 		}
 
+	$file = $directory."/file.php"; // créer $file
+	file_put_contents($file , "DATA"); // mettez'y la chiane de carractères "DATA"
 
-$file = $directory."/file.php"; // créer $file
-file_put_contents($file , "DATA"); // mettez'y la chiane de carractères "DATA"
-// change permission
-chmod($file, 0444); echo "Mode Changed to [0444]<br>";
+	// change permission
+	chmod($file, 0444); echo "Mode Changed to [0444]<br>";
+
+
+	// INFORMATION PESANTE :
+	// -------------------
 
 	// # Chmod() # est une fonction trés populaire chez les programmeur en PHP et Autres languages de programmation, 
-	// elle permet de donner la permission au gent de lire, executer, ou même écrire sur un fichier. et c'est logique, car vous 	ne voulez pas laisser les gents faire avec vos documents et scripts hebergés sur Internet Ce Qu'ils veulent.
+		// elle permet de donner la permission au gent de lire, executer,
+		// ou même écrire sur un fichier. et c'est logique, car vous ne 
+		// voulez pas laisser les gents faire avec vos documents et scripts
+		// hebergés sur Internet Ce Qu'ils veulent.
 			// Les voici les permission possible que vous pouver donner :
 				// r = read = 4	:;
 				// w = write = 2 :;
@@ -57,7 +64,7 @@ chmod($file, 0444); echo "Mode Changed to [0444]<br>";
 					// 5  :  ra9m talet dyal lakhrin 7ayed ghir l'Owner w L'Groupe o7seb m3a rasek ch7al men wa7ed ghadi 
 					// 		 yconsulti la page dyalek	=>		5 = r+x = 4+1 = (read)+(execure)
 
-					// FIN ...
+	// FIN (INFORMATION_PESANTE)...
 
 
 			// ila mafhemtich lcode lte7tani rah khassek li izid lik HHHH
@@ -69,7 +76,6 @@ if (is_writable($file)) {
 	file_put_contents($file, "Congratulation You finished the Exercice");
 	include($file);
 }
-
 
 // END ...
 // bON cOURAGE
